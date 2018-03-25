@@ -1,0 +1,4 @@
+- By not using .set() or pushObject() the DOM will not rerender
+- Templates are chunks of HTML with dynamic elements that get compiled by the application and inserted
+into the DOM. 
+- check spelling of handlebars properties if something isnt working as these errors dont show up
