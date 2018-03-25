@@ -1,7 +1,11 @@
-- By not using .set() or pushObject() the DOM will not rerender
+- By not using .set() or .pushObject() the DOM will not rerender
 - Templates are chunks of HTML with dynamic elements that get compiled by the application and inserted
 into the DOM. 
 - check spelling of handlebars properties if something isnt working as these errors dont show up
 
 - export default exports a single value from the module
 - named exports exports several thing from the module
+
+- {{link-to "Songs" "songs"}} first param link text, second param link for URL
+- The properties in the template need to be defined on the controller, since that is the context the template is
+rendered with.

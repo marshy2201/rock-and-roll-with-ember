@@ -31,3 +31,4 @@ export default Route.extend({
     return A([blackDog, yellowLedbetter, pretender]);
   }
 });
+
