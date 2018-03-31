@@ -9,3 +9,8 @@ into the DOM.
 - {{link-to "Songs" "songs"}} first param link text, second param link for URL
 - The properties in the template need to be defined on the controller, since that is the context the template is
 rendered with.
+
+- EmberObject.extend creates a subclass of EmberObject so it inherits all the functionality EmberObject defines. We does this to add properties and methods to it to make the class implement the logic we want to use. 
+- to create instances of the EmberObject we have made, use the .create() method. 
+
+- this._super(...arguments) calls the same method (i.e init) in the superclass with the same arguments.
