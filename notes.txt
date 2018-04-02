@@ -14,3 +14,22 @@ rendered with.
 - to create instances of the EmberObject we have made, use the .create() method. 
 
 - this._super(...arguments) calls the same method (i.e init) in the superclass with the same arguments.
+
+- ember generate route bands/band --path=':user_id'
+
+- dasherize() replaces underscores, spaces, or camelCase with dashes
+
+- findBy() method finds the first item whose property (passed as the first argument) matches the value passed as the second argument
+
+- computing functions are only run if any of the dependent keys change
+- When the value of a dependent key changes, the CP is marked as stale. The next time we access its value (the CP), the computing function is run and its returned value becomes the new value of the CP
+
+-  the routing structure makes it possible for lower levels to access data that was retrieved higher up in the chain.
+
+
+
+
+WORK IDEAS
+
+- use modelFor() for when using findRecord() in model
+- use modelFor() to get ember-models-table data
