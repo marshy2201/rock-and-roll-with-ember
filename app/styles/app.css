@@ -108,12 +108,12 @@ a {
   text-align: center;
 }
 
-.rr-band-link > .pointer {
+.rr-band-link > .rr-pointer {
   margin-left: 5px;
   display: none;
 }
 
-.rr-band-link.active > .pointer {
+.rr-band-link.active > .rr-pointer {
   display: inline-block;
 }
   
