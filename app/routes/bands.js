@@ -1,21 +1,7 @@
 import Route from '@ember/routing/route';
 import { A } from '@ember/array';
-import EmberObject, { computed } from '@ember/object';
-import { dasherize } from '@ember/string';
-
-let Band = EmberObject.extend({
-  name: '',
-
-  slug: computed('name', function() {
-    return dasherize(this.get('name'));
-  })
-});
-
-let Song = EmberObject.extend({
-  title: '',
-  band: '',
-  rating: 0
-});
+import Band from 'rock-and-roll-with-ember/models/band';
+import Song from 'rock-and-roll-with-ember/models/song';
 
 export default Route.extend({
   model() {
@@ -43,10 +29,16 @@ export default Route.extend({
       rating: 5
     });
 
+    let technology = Song.create({
+      title: "Technology",
+      band: "Don Broco",
+      rating: 5
+    });
+
     let ledZeppelin = Band.create({ name: 'Led Zeppelin', songs: A([blackDog]) });
     let pearlJam = Band.create({ name: 'Pearl Jam', songs: A([yellowLedbetter, daughter]) });
     let fooFighters = Band.create({ name: 'Foo Fighters', songs: A([pretender]) });
-    let donBroco = Band.create({ name: "Don Broco", songs: A([])});
+    let donBroco = Band.create({ name: "Don Broco", songs: A([technology])});
     
     return A([ledZeppelin, pearlJam, fooFighters, donBroco]);
   }
