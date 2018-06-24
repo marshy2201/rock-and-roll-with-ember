@@ -5,6 +5,7 @@ import Song from 'rock-and-roll-with-ember/models/song';
 
 export default Route.extend({
   model() {
+    // Songs
     let blackDog = Song.create({
       title: 'Black Dog',
       band: 'Led Zeppelin',
@@ -35,11 +36,34 @@ export default Route.extend({
       rating: 5
     });
 
-    let ledZeppelin = Band.create({ name: 'Led Zeppelin', songs: A([blackDog]) });
-    let pearlJam = Band.create({ name: 'Pearl Jam', songs: A([yellowLedbetter, daughter]) });
-    let fooFighters = Band.create({ name: 'Foo Fighters', songs: A([pretender]) });
-    let donBroco = Band.create({ name: "Don Broco", songs: A([technology])});
+    // Bands
+    let ledZeppelin = Band.create({ 
+      name: 'Led Zeppelin', 
+      songs: A([blackDog]) 
+    });
+
+    let pearlJam = Band.create({ 
+      name: 'Pearl Jam',
+      description: 'Pearl Jam is an American rock band, formed in Seattle, Washington in 1990.', 
+      songs: A([yellowLedbetter, daughter]) 
+    });
+
+    let fooFighters = Band.create({ 
+      name: 'Foo Fighters', 
+      songs: A([pretender]) 
+    });
+
+    let donBroco = Band.create({ 
+      name: "Don Broco", 
+      songs: A([technology])
+    });
     
     return A([ledZeppelin, pearlJam, fooFighters, donBroco]);
+  },
+
+  actions: {
+    didTransition() {
+      document.title = 'Bands - Rock & Roll';
+    },
   }
 });

@@ -1,6 +1,8 @@
 <div class="rr-container ph3">
   <div class="rr-page-header">
-    <h1 class="rr-app-title">Rock &amp; Roll<small class="rr-subtitle"> with Ember.js</small></h1>
+    {{#link-to "index"}}
+      <h1 class="rr-app-title">Rock &amp; Roll<small class="rr-subtitle"> with Ember.js</small></h1>
+    {{/link-to}}
   </div>
   <div class="rr-main-content">
     {{outlet}}
