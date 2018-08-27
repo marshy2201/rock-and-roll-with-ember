@@ -1,5 +1,4 @@
 import Controller from '@ember/controller';
-import Song from 'rock-and-roll-with-ember/models/song';
 import { empty } from '@ember/object/computed';
 
 export default Controller.extend({
@@ -17,15 +16,21 @@ export default Controller.extend({
       this.set('isAddingSong', false);
     },
 
-    saveSong(event) {
+    async saveSong(band, event) {
       event.preventDefault();
-      let newSong = Song.create({ title: this.get('newSongTitle') });
-      this.get('model.songs').pushObject(newSong);
+
+      const newSong = this.store.createRecord('song', { 
+        title: this.newSongTitle,
+        band
+      });
+
+      await newSong.save();
       this.set('newSongTitle', '');
     },
 
     updateRating(song, rating) {
-      song.set('rating', song.rating === rating ? rating - 1 : rating);
+      song.set('rating', song.get('rating') === rating ? rating - 1 : rating);
+      song.save();
     }      
   }
 });

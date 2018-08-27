@@ -11,7 +11,7 @@
   {{/each}}
   <div class="rr-new-label">
     {{#if isAddingSong}}
-      <form class="rr-inline-form" onsubmit={{action "saveSong"}}>
+      <form class="rr-inline-form" onsubmit={{action "saveSong" model}}>
         {{input type="text" class="rr-input" value=newSongTitle placeholder="New Song"}}
         <button type="submit" class="rr-action-button" disabled={{isAddButtonDisabled}}>Add</button>
         <span class="rr-cancel-icon" onclick={{action "cancelAddSong"}}>{{fa-icon "times"}}</span>
