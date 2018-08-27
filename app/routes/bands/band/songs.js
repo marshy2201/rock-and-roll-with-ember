@@ -16,7 +16,7 @@ export default Route.extend({
   actions: {
     didTransition() {
       let band = this.modelFor('bands.band');
-      document.title = `${band.name} songs - Rock & Roll`;
+      document.title = `${band.get('name')} songs - Rock & Roll`;
     }
   }
 });
