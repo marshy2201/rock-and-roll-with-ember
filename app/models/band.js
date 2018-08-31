@@ -9,7 +9,7 @@ export default Model.extend({
   songs: hasMany(),
 
   isGreatBand: computed('songs.[].rating', function() {
-    let goodSongs = this.get('songs').filter(song => song.get('rating') >= 4);
+    let goodSongs = this.get('songs').filter(song => song.rating >= 4);
     return goodSongs.length >= 2;
   })    
 });

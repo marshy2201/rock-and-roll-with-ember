@@ -31,7 +31,7 @@ export default Controller.extend({
   matchingSongs: computed('model.songs.@each.title', 'searchTerm', function() {
     let searchTerm = this.searchTerm.toLowerCase();
 
-    return this.model.get('songs').filter(song => song.get('title').toLowerCase().includes(searchTerm));
+    return this.model.get('songs').filter(song => song.title.toLowerCase().includes(searchTerm));
   }),
 
   actions: {
@@ -56,7 +56,7 @@ export default Controller.extend({
     },
 
     updateRating(song, rating) {
-      song.set('rating', song.get('rating') === rating ? rating - 1 : rating);
+      song.set('rating', song.rating === rating ? rating - 1 : rating);
       song.save();
     }
   }
