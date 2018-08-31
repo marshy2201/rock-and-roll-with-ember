@@ -39,7 +39,6 @@ module('Acceptance | Bands', function(hooks) {
 
     await visit('/');
     await click('[data-test-rr=band-link]');
-    await click('[data-test-rr=songs-nav-item] > a');
 
     assert.equal(currentURL(), '/bands/1/songs');
     assert.dom('[data-test-rr=song-list-item]:first-child').hasText('Elephants', 'The first song is the highest ranked, first one in the alphabet');
@@ -74,7 +73,6 @@ module('Acceptance | Bands', function(hooks) {
 
     await visit('/');
     await click('[data-test-rr=band-link]');
-    await click('[data-test-rr=songs-nav-item] > a');
     await fillIn('[data-test-rr=search-box]', 'no');
 
     assert.equal(currentURL(), '/bands/1/songs?s=no');
