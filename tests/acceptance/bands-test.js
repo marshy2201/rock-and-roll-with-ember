@@ -47,20 +47,20 @@ module('Acceptance | Bands', function(hooks) {
     await click('[data-test-rr=sort-by-title-desc]');
     
     assert.equal(currentURL(), '/bands/1/songs?sort=titleDesc');
-    assert.dom('[data-test-rr=song-list-item]:first-child').hasText('Spinning in Daffodils', 'The first song is the one that comes last in the alphabet');
+    assert.dom('[data-test-rr=song-list-item]:first-child').hasText('Spinning In Daffodils', 'The first song is the one that comes last in the alphabet');
     assert.dom('[data-test-rr=song-list-item]:last-of-type').hasText('Elephants', 'The last song is the one that comes first in the alphabet');
 
     await click('[data-test-rr=sort-by-title-asc]');
 
     assert.equal(currentURL(), '/bands/1/songs?sort=titleAsc');
     assert.dom('[data-test-rr=song-list-item]:first-child').hasText('Elephants', 'The first song is the one that comes first in the alphabet');
-    assert.dom('[data-test-rr=song-list-item]:last-of-type').hasText('Spinning in Daffodils', 'The last song is the one that comes last in the alphabet');
+    assert.dom('[data-test-rr=song-list-item]:last-of-type').hasText('Spinning In Daffodils', 'The last song is the one that comes last in the alphabet');
 
     await click('[data-test-rr=sort-by-rating-asc]');
 
     assert.equal(currentURL(), '/bands/1/songs?sort=ratingAsc');
     assert.dom('[data-test-rr=song-list-item]:first-child').hasText('Mind Eraser, No Chaser', 'The first song is the lowest ranked, last one in the alphabet');
-    assert.dom('[data-test-rr=song-list-item]:last-of-type').hasText('Spinning in Daffodils', 'The last song is the highest ranked, first one in the alphabet');
+    assert.dom('[data-test-rr=song-list-item]:last-of-type').hasText('Spinning In Daffodils', 'The last song is the highest ranked, first one in the alphabet');
   }); 
 
   test('Search songs', async function(assert) {
