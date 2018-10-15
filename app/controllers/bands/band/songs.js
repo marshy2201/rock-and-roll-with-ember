@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { empty, sort } from '@ember/object/computed';
 import { computed } from '@ember/object';
+import { capitalize } from 'rock-and-roll-with-ember/helpers/capitalize';
 
 export default Controller.extend({
   queryParams: {
@@ -32,6 +33,10 @@ export default Controller.extend({
     let searchTerm = this.searchTerm.toLowerCase();
 
     return this.model.get('songs').filter(song => song.title.toLowerCase().includes(searchTerm));
+  }),
+
+  newSongPlaceholder: computed('model.name', function() {
+    return `New ${capitalize(this.model.name)} song`;
   }),
 
   actions: {
